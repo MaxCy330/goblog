@@ -2,11 +2,11 @@ package main
 
 import (
 	"flag"
+	"github.com/MaxCy330/goblog/controllers/admin"
+	"github.com/MaxCy330/goblog/controllers/blog"
+	"github.com/MaxCy330/goblog/models"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
-	"github.com/lisijie/goblog/controllers/admin"
-	"github.com/lisijie/goblog/controllers/blog"
-	"github.com/lisijie/goblog/models"
 	"os"
 	"path/filepath"
 )
@@ -36,7 +36,7 @@ func main() {
 	//前台路由
 	beego.Router("/", &blog.MainController{}, "*:Index")
 	beego.Router("/page/:page:int", &blog.MainController{}, "*:Index")
-	beego.Router("/article/:id:int", &blog.MainController{}, "*:Show")         //ID访问
+	beego.Router("/article/:id:int", &blog.MainController{}, "*:Show")      //ID访问
 	beego.Router("/article/:urlname(.+)", &blog.MainController{}, "*:Show") //别名访问
 	beego.Router("/archives", &blog.MainController{}, "*:Archives")
 	beego.Router("/archives/page/:page:int", &blog.MainController{}, "*:Archives")

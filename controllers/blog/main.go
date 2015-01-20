@@ -1,7 +1,7 @@
 package blog
 
 import (
-	"github.com/lisijie/goblog/models"
+	"github.com/MaxCy330/goblog/models"
 	"strconv"
 	"strings"
 )
